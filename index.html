@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>PHP Ajax</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-4">
+
+            <div id="content" class="col" style="text-align: center;">
+
+                <h2 class="m-4">Search Database</h2>
+
+                <input type="text" class="form-control" name="search" id="search" placeholder="Search term ...">
+
+                <div id="result" class="mt-5" style="display: none;"></div>
+
+            </div>
+
+
+            <div class="col">
+                <form id="add-car-form" action="add_car.php">
+                    <h2 class="m-4">Add cars</h2>
+                    <div class="form-group">
+                        <input type="text" name="car_name" id="car_name" class="form-control" placeholder="Car Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Car" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col">
+                <h2 class="m-4">All cars</h2>
+                <div id="all-data">
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="updateModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Update record</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="updateMsg text-center"></div>
+                    <div class="form-group">
+                        <label for="cars">Car Name</label>
+                        <input type="text" class="form-control" value="" id="carUpdateValue">
+                        <input type="hidden" value="" name="id" id="updateId">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="updateSave">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
